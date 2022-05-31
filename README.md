@@ -1,4 +1,6 @@
-# Steps to follow after cloning
+# How to use
+
+git clone https://github.com/podax/react-crud.git
 
 cd react-crud
 
