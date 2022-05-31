@@ -43,7 +43,7 @@ const EditBlog = () => {
                 <form onSubmit={handleSubmit}>
                     <label className="block">Title:</label>
                     <input 
-                        className="block"
+                        className="block w-96"
                         type="text"
                         required
                         value={title}
@@ -51,14 +51,15 @@ const EditBlog = () => {
                     />
                     <label className="block mt-2">Body:</label>
                     <textarea 
-                        className="block"
+                        className="block w-96"
                         required
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
+                        rows="5"
                     ></textarea>
                     <label className="block mt-2">Author:</label>
                     <select
-                        className="block"
+                        className="block w-96"
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                     >
