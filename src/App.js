@@ -9,18 +9,16 @@ import EditBlog from "./Blogs/Edit";
 function App() {
   return (
     <Router>
-      <div className="App">
-        <div className="content">
-          <Navbar />
-          <div className="content">
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/create" element={<Create />} />
-              <Route exact path="/blogs/:id" element={<BlogDetails />} />
-              <Route exact path="/blogs/:id/edit" element={<EditBlog />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+      <div className="px-12">
+        <Navbar />
+        <div className="my-12">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/create" element={<Create />} />
+            <Route exact path="/blogs/:id" element={<BlogDetails />} />
+            <Route exact path="/blogs/:id/edit" element={<EditBlog />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </Router>

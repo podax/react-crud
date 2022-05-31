@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('john doe');
+    const [author, setAuthor] = useState('John Doe');
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -21,31 +21,34 @@ const Create = () => {
     }
     
     return (
-        <div className="mt-10">
-            <h2>Add a New Blog</h2>
+        <div className="p-4">
+            <h2 className="text-lg mb-4">Add a New Blog</h2>
             <form onSubmit={handleSubmit}>
-                <label>Title:</label>
-                <input 
+                <label className="block">Title:</label>
+                <input
+                    className="block"
                     type="text"
                     required
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <label>Body:</label>
+                <label className="block mt-2">Body:</label>
                 <textarea 
+                    className="block"
                     required
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
-                <label>Author:</label>
+                <label className="block mt-2">Author:</label>
                 <select
+                    className="block"
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 >
-                    <option value="john doe">john doe</option>
-                    <option value="jane doe">jane doe</option>
+                    <option value="John Doe">John Doe</option>
+                    <option value="Jane Doe">Jane Doe</option>
                 </select>
-                <button>Add Blog</button>
+                <button className="mt-4 p-1 text-white bg-indigo-500">Add Blog</button>
             </form>
         </div>
     );

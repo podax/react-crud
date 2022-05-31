@@ -6,7 +6,7 @@ const EditBlog = () => {
     const [isPending, setIsPending] = useState(true);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('john doe');
+    const [author, setAuthor] = useState('John Doe');
     const { id } = useParams();
 
     useEffect(() => {
@@ -34,35 +34,38 @@ const EditBlog = () => {
     }
 
     return (
-        <div className="mt-10">
-            <h2>Edit Blog</h2>
+        <div className="p-4">
+            <h2 className="text-lg mb-4">Edit Blog</h2>
 
             { isPending && <div>Loading...</div>}
             
             { !isPending && (
                 <form onSubmit={handleSubmit}>
-                    <label>Title:</label>
+                    <label className="block">Title:</label>
                     <input 
+                        className="block"
                         type="text"
                         required
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                    <label>Body:</label>
+                    <label className="block mt-2">Body:</label>
                     <textarea 
+                        className="block"
                         required
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                     ></textarea>
-                    <label>Author:</label>
+                    <label className="block mt-2">Author:</label>
                     <select
+                        className="block"
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                     >
-                        <option value="john doe">john doe</option>
-                        <option value="jane doe">jane doe</option>
+                        <option value="John Doe">John Doe</option>
+                        <option value="Jane Doe">Jane Doe</option>
                     </select>
-                    <button>Save</button>
+                    <button className="mt-4 p-1 text-white bg-indigo-500">Save</button>
                 </form>
             )}
         </div>

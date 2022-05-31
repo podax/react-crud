@@ -15,16 +15,19 @@ const BlogDetails = () => {
     }
 
     return (
-        <div className="mt-10">
+        <div className="p-4">
             { error && <div>{ error }</div> }
             { isPending && <div>Loading...</div> }
             { blog && (
                 <article>
-                    <h2>{ blog.title }</h2>
-                    <p>Written by { blog.author }</p>
-                    <div>{ blog.body }</div>
-                    <Link to={`/blogs/${blog.id}/edit`}>Edit</Link>
-                    <button onClick={handleDelete}>Delete</button>
+                    <h2>
+                        <div className="text-indigo-600 text-2xl">{ blog.title }</div>
+                        <small>Written by { blog.author }</small>
+                    </h2>
+                    <div className="my-4">{ blog.body }</div>
+
+                    <Link to={`/blogs/${blog.id}/edit`} className="mr-2 p-1 bg-green-500">Edit</Link>
+                    <button onClick={handleDelete} className="mr-2 p-1 bg-red-500">Delete</button>
                 </article>
             )}
         </div>
